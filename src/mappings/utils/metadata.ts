@@ -7,7 +7,7 @@ export const fetchMetadata = async <T>(metadata: string): Promise<T> => {
     if (!metadata) {
       return ensure<T>({});
     }
-    return await $obtain<T>(metadata, ['kodadot', 'nftstorage']);
+    return await $obtain<T>(metadata);
   } catch (e) {
     logger.warn('IPFS Err', e);
   }
